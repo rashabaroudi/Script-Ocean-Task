@@ -14,10 +14,12 @@ const Home = () => {
   return (
     <div className='bg-slate mx-auto flex flex-col justify-center items-center gap-[80px]  '>
       <Hero/>
-      <Headline title='Discover The Power of Ai' paragraph='Create stunning, professional designs effortlessly using our AI-driven tools. Let the AI handle the heavy lifting, so you can focus on your vision' style='text-center' />
+      <Headline title='Discover The Power of Ai' paragraph='Create stunning, professional designs effortlessly using our AI-driven tools. Let the AI handle the heavy lifting, so you can focus on your vision' style='text-center'
+        
+      />
       <WithEaseSection/>
       <PortfolioSection/>
-      <Headline title='Explore Our AI-Powered Themes' />
+      <Headline title='Explore Our AI-Powered Themes' style='text-center' />
       <CreativePortfolio/>
       <Blogging/>
       <CarouselSection/>

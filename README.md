@@ -7,6 +7,7 @@ Welcome to our project! This is a landing page made using react js framework and
 1. React js framework
 2. Tailwind css for styling
 3. react-slick library which helped me to build reusable carousel
+4. framer-motion library to add animations and enhance user experience
 
 ## Instructions
 1. Fork this repository

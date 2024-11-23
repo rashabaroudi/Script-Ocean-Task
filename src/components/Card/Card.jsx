@@ -2,7 +2,7 @@ import React from 'react'
 
 const Card = ({name,comment,photo}) => {
   return (
-    <div className='w-full min-h-[443px] p-4 flex flex-col justify-center items-center border shadow-2xl gap-4 bg-[#F9F9FF]'>
+    <div className='hover:scale-90 duration-200 w-full min-h-[443px] p-4 flex flex-col justify-center items-center border shadow-2xl gap-4 bg-[#F9F9FF]'>
         
         
         <h1 className='font-manrope  text-[#69A5A4] font-bold text-[12.5rem] leading-[273px]'>"</h1>

@@ -1,10 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Manrope:wght@200..800&family=Marck+Script&family=Oleo+Script:wght@400;700&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Manrope:wght@200..800&family=Manuale:ital,wght@0,300..800;1,300..800&family=Marck+Script&family=Oleo+Script:wght@400;700&family=Outfit:wght@100..900&display=swap');
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
 @layer base {
+
   button {
     @apply  border border-black rounded-xl px-5 py-1
   }
+
+ 
 }
+
+
+a.active {
+  @apply border bg-black text-white rounded-2xl pt-4 pr-5 pb-4 pl-5 border-transparent
+
+}
+
+

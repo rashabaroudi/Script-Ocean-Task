@@ -1,38 +1,129 @@
-import React from 'react'
-import { AiOutlineMenu, AiOutlineSearch} from 'react-icons/ai'
-import {BsFillCartFill} from 'react-icons/bs'
+import React, { useEffect, useState } from 'react'
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom'
+import Button from '../Button/Button';
+
 const Navbar = () => {
+
+  
+ 
+
+  const [showNav,setShowNav]=useState(false);
+  const links =[
+    {
+      id:1,
+      name:'home',
+      route:'/'
+    },
+    {
+      id:2,
+      name:'theme',
+      route:'/theme'
+    },
+    {
+      id:3,
+      name:'extensions',
+      route:'/extensions'
+    },
+    {
+      id:4,
+      name:'pricing',
+      route:'/pricing'
+    },
+    {
+      id:5,
+      name:'about',
+      route:'/about'
+    },
+  ]
+
+
+  
+
   return (
-    <div className='max-w-[1640] mx-auto flex justify-between items-center  p-4'>
-      <div className='flex items-center'>
-          <div className='cursor-pointer'>
-              <AiOutlineMenu size={30}/>
+    <nav className='flex flex-row justify-center   items-center bg-transparent fixed  w-full h-[95px] '>
+      <div className='flex justify-between w-full h-[55px] pt-5 pb-5 p-5 items-center'>
+           {/* logo */}
+        <h1 className='font-semibold text-[1.75rem] leading-[2.39rem] font-manrope capitalize '>logo</h1>
+
+         {/* navbar menu */}
+        <div className='menu'>
+            
+           <ul className='hidden md:flex flex-row justify-center items-center gap-4 '>
+            
+           
+             
+          
+             {links.map(({id,name,route}) => (
+              <NavLink key={id} to ={route} className='capitalize font-manrope font-semibold text-sm lg:text-base pt-4 pb-4 pl-5 pr-5 '  >
+               {name}
+              </NavLink>
+             ))}
+             
+            </ul>
+
+           
           </div>
 
-        {/* left Side in navbar */}
-        <h1 className='text-2xl  sm:text-3xl lg:text-4xl p-4'>
-          Best 
-          <strong className='font-bold '>Eats</strong>
-        </h1>
-        <div className='hidden lg:flex rounded-full bg-slate-200 text-[16px]'>
-          <p className='bg-black text-white rounded-full p-2'>Delivery</p>
-          <p className='p-2 '>Pickup</p>
-        </div>
-      </div>
+          <div className='hidden lg:flex  text-[16px] gap-4 items-center justify-center '>
 
-      {/* search input */}
-      <div className='flex items-center px-2 bg-gray-200 rounded-full w-[200px] sm:w-[400px] lg:w-[500px]'>
-
-        <AiOutlineSearch size={25} className='text-gray-700 '/>
-        <input className='bg-transparent p-2 focus:outline-none w-full' type='text' placeholder='Search foods'/>
-
-      </div>
-      {/* add cart button */}
-      <button  className=' bg-black text-white  hidden md:flex  items-center py-1 rounded-full ' >  
         
-        <BsFillCartFill size={20} className='mr-2'/> Cart</button>
-    </div>
+            <p className='font-semibold text-lg font-manrope capitalize text-semiBlack'>sign up</p>
+            <Button name='log in'/>
+           
+        
+
+          </div>
+
+           {/* burger menu */}
+
+           <div onClick={()=>{setShowNav(!showNav)}} className='z-10 md:hidden' >
+           {showNav ? <FaTimes className=" text-semiBlack" size={35}/> : <FaBars size={35}/>} 
+          </div>
+            {showNav && (
+              
+                    
+                    <ul className=' flex flex-col  justify-center w-full h-fit transition-all ease-linear  items-center absolute bg-slate top-0 right-0 bottom-0  duration-700'>
+        
+             
+        {links.map(({id,name,route}) => (
+              <NavLink to={route} key={id} className='capitalize font-manrope font-semibold  text-semiBlack text-base pt-4 pb-4 pl-5 pr-5  hover:scale-105 duration-200 '>
+              {name}
+            </NavLink>
+          ))}
+        <div className='flex flex-row justify-center items-center gap-4 '>
+        <p className='font-semibold text-lg font-manrope capitalize text-semiBlack'>sign up</p>
+         <Button name='log in' />
+
+        </div>
+                
+        </ul>
+        
+              
+              
+
+
+                
+            )}
+         
+
+
+
+
+
+          
+        
+      </div>
+        
+      
+    </nav>
   )
 }
 
 export default Navbar
+
+
+
+
+
+
